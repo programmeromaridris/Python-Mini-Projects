@@ -1,6 +1,6 @@
 import random
 
-top_of_range = input("Type a number:")
+top_of_range = input("You are playing a number guessing game! To quit, type 'q'. Type a number:")
 
 if top_of_range.isdigit():
     top_of_range = int(top_of_range)
