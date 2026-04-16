@@ -23,7 +23,7 @@ def login():
  
 def main():
     while True:
-        choice = input("Do you want to [1] create an account or [2] login? (Enter 'q' to quit): )")
+        choice = input("Do you want to [1] create an account or [2] login? (Enter 'q' to quit): ")
         if choice == "1": 
             create_account()
         elif choice == "2":
@@ -34,3 +34,6 @@ def main():
         else:
             print("Invalid choice. Please enter 1, 2, or q.")
             continue
+        
+if __name__ == "__main__":
+    main()        
