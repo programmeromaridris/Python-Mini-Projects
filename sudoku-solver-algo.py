@@ -36,16 +36,16 @@ def is_valid(row_index, column_index, number):
 def solve():
     global sudoku_grid
     
-    for row in range(0, 9):
+    for row in range(0,9):
         for column in range(0,9):
             # Check if blank
             if sudoku_grid[row][column] == 0:
-                for number in(range(1, 10)):
+                for number in(range(1,10)):
                     if is_valid(row, column, number):
                         sudoku_grid[row][column] = number
                         solve()
                         sudoku_grid[row][column] = 0
-                    return           
+                return           
     print(np.matrix(sudoku_grid))
     input('Press enter for more solutions.')
     return
