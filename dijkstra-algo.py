@@ -1,4 +1,5 @@
-
+import heapq
+from heapq import heapify, heappop, heappush
 
 graph = {
    "A": {"B": 3, "C": 3},
@@ -18,6 +19,32 @@ class Graph:
         if node1 not in self.graph: # Check if the node is already added
             self.graph[node1] = {} # if not, create the node
         self.graph[node1][node2] = weight # else,  add a connection to its neighbor
+    
+    def shortest_distances(self, source: str):
+        # init all the nodes values with infinity
+        distances = {node: float("inf") for node in self.graph}
+        distances[source] = 0 # set the source node value to 0
+        
+        pq = [(0, source)]
+        heapify(pq)
+        
+        # Create a set to hold visited nodes
+        visited = set()
+        
+        while pq: # While the priority queue isnt empty
+            current_distance, current_node = heappop(
+                pq
+            )    # Get the node with the min distance
+            
+            if current_node in visited:
+                continue # Skip over already visited nodes
+            visited.add(current_node) # else, add the node to the set
+            
+            
+        
+        
+          
+
         
         
 G = Graph(graph=graph)
