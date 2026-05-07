@@ -21,7 +21,7 @@ class Graph:
         self.graph[node1][node2] = weight # else,  add a connection to its neighbor
     
     def shortest_distances(self, source: str):
-        predecessors = {node: None for node in self.graph}
+
         
         # init all the nodes values with infinity
         distances = {node: float("inf") for node in self.graph}
@@ -47,12 +47,8 @@ class Graph:
                     distances[neighbor] = tentative_distance
                     heappush(pq, (tentative_distance, neighbor))
                     
-            for node, distance in distance.items(): 
-              for neighbor, weight in self.graph[current_node].items():             
-                if distances[neighbor] == distance + weight:
-                    predecessors[neighbor] = node           
-        return distances, predecessors
-            
+              
+        return distances
             
         
         
@@ -62,6 +58,8 @@ class Graph:
         
 G = Graph(graph)
 
-distances, predecessors = G.shortest_distances("B")
+distances = G.shortest_distances("B")
+print(distances, "\n")
 
-print(predecessors)
+to_F = distances["F"]
+print(f"The shortest distance from B to F is {to_F}")
