@@ -14,7 +14,7 @@ A `Graph` class holds an adjacency list and exposes a `shortest_distances(source
 
 **Run it:**
 ```bash
-python dijkstra.py
+python dijkstra-algo.py
 ```
 
 **What this required:**
@@ -32,7 +32,7 @@ The solver scans for empty cells (marked `0`), tries digits 1–9, validates aga
 
 **Run it:**
 ```bash
-python sudoku.py
+python sudoku-solver-algo.py
 ```
 
 **What this required:**
